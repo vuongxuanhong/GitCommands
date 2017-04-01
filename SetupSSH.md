@@ -28,7 +28,7 @@ eval $(ssh-agent -s)`
 ```
 2. Add key 
 ```java
-ssh-add ~/.ssh/<yourkey>
+ssh-add ~/.ssh/<yourkey> (without extension)
 ``` 
 
 # Add config file (necessary for multiple ssh key for multiple Version Control System)
@@ -40,7 +40,7 @@ ssh-add ~/.ssh/<yourkey>
 2. Edit `config` file with content
 ```java
    Host github.com
-    IdentityFile ~/.ssh/<yourkey>
+    IdentityFile ~/.ssh/<yourkey> (without extension)
 ```
 3. Remember add the indent at the second line
 
@@ -60,5 +60,6 @@ Enter command
 ```java 
 ssh -T git@github.com
 ```
+if you was request to add this host to known-hosts file, type yes to accept.
 if you see the line "Hi <user>! You've successfully authenticated, but ...." => OK
 
