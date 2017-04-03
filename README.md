@@ -1,64 +1,16 @@
-# Useful Git Commands
+This repository introduces some useful git commands, how the workflow works, ...
 
-Using the SSH protocol, you can connect and authenticate to remote servers and services. With SSH keys, you can connect to GitHub without supplying your username and password at each visit.
+# Bypass username & password, come to SSH
 
-# Check for existing SSH keys
+Using SSH, you can push/fetch without typing username and password, ssh will authenticate for u.
 
-1. Open git bash
-2. See existing SSH keys are present 
-```java
-ls -al ~/.ssh
-```
-   If you see any file with .pub suffix, it is an SSH key
+For details, read [SetupSSH](https://github.com/vuongxuanhong/GitCommands/blob/master/SetupSSH.md)
 
-# Generate a new SSH key
+# Workflows
 
-1. Enter 
-```java
-ssh-keygen -t rsa -b 4096 -C "youremailaddress@gmail.com"
-```
-2. Enter filename to save generated key (without any extension, it will be added afterward)
-3. Enter passphrase if neccessary
+Types of workflow and how to deal with them.
 
-# Add your key to ssh-agent
+# Utilities commands
 
-1. Verify whether ssh agent is running 
-```java
-eval $(ssh-agent -s)`
-```
-2. Add key 
-```java
-ssh-add ~/.ssh/<yourkey>
-``` 
-
-# Add config file (necessary for multiple ssh key for multiple Version Control System)
-
-1. Add new file if it's not existed at location: 
-```java 
-~/.ssh/config
-```
-2. Edit `config` file with content
-```java
-   Host github.com
-    IdentityFile ~/.ssh/<yourkey>
-```
-3. Remember add the indent at the second line
-
-
-# Add public SSH key to Github account
-
-1. Copy public SSH key
-2. Paste into SSH setting page of github: 
-```java
-https://github.com/settings/keys
-```
-3. Create
-
-# Check the connection
-
-Enter command 
-```java 
-ssh -T git@github.com
-```
-if you see the line "Hi <user>! You've successfully authenticated, but ...." => OK
+Some commands relate to files, repository,...
 
